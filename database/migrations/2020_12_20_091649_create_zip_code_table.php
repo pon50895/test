@@ -17,11 +17,12 @@ class CreateZipCodeTable extends Migration
             return 'There is the table zip_code existing';
         }
 
-        Schema::table('zip_code', function (Blueprint $table) {
+        Schema::create('zip_code', function (Blueprint $table) {
             $table->increments('id')->unsigned();
-            $table->int('zip_code')->index('zip_code');
-            $table->string('city_name')->index('city_name');
-            $table->string('area_name')->index('area_name');
+            $table->integer('zip_code')->index('zip_code');
+            $table->string('city')->index('city');
+            $table->string('area')->index('area');
+            $table->string('street')->index('street');
             $table->string('spelling')->index('spelling');
         });
     }
