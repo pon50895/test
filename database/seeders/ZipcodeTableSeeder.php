@@ -54,11 +54,12 @@ class ZipcodeTableSeeder extends Seeder
                 foreach($file_area as $street)
                 {
                     $input = array(
-                        'city'     => $city,
+                        'city'      => $city,
+                        'file_name' => $area['filename'] . '.json',
                         'zip_code'  => $zip_code,
-                        'area'     => $area_name,
-                        'street'   => $street['name'],
-                        'spelling' => $street['abc'],
+                        'area'      => $area_name,
+                        'street'    => $street['name'],
+                        'spelling'  => $street['abc'],
                     );
 
                     DB::table('zip_code')->insert($input);

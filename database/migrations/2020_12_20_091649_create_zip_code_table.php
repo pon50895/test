@@ -19,6 +19,7 @@ class CreateZipCodeTable extends Migration
 
         Schema::create('zip_code', function (Blueprint $table) {
             $table->increments('id')->unsigned();
+            $table->string('file_name');
             $table->integer('zip_code')->index('zip_code');
             $table->string('city')->index('city');
             $table->string('area')->index('area');
