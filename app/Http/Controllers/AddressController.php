@@ -3,17 +3,28 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Library\LibGeoCodingAPI;
 
 class AddressController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Store a newly created resource in storage.
      *
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function index()
+//    public function __construct(AddressController $addressController)
+//    {
+//        $this->controller = $addressController;
+//    }
+
+    public function GetAddress(Request $request)
     {
         $LibGeoCodingAPI = new LibGeoCodingAPI();
+
+        return $LibGeoCodingAPI->get($request);
+
+//        return response()->json($request, 200);
 
         // todo 接收資料
 
@@ -22,48 +33,14 @@ class AddressController extends Controller
         // todo 輸出
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function GetMultiAddress(Request $request)
     {
-        //
-    }
+        $LibGeoCodingAPI = new LibGeoCodingAPI();
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+        // todo 接收資料
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+        // todo 查詢資料庫
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        // todo 輸出
     }
 }

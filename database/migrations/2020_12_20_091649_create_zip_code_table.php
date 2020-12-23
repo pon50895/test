@@ -13,11 +13,11 @@ class CreateZipCodeTable extends Migration
      */
     public function up()
     {
-        if (Schema::hasTable('zip_code')) {
+        if (Schema::hasTable('zipcodes')) {
             return 'There is the table zip_code existing';
         }
 
-        Schema::create('zip_code', function (Blueprint $table) {
+        Schema::create('zipcodes', function (Blueprint $table) {
             $table->increments('id')->unsigned();
             $table->string('file_name');
             $table->integer('zip_code')->index('zip_code');
@@ -35,6 +35,6 @@ class CreateZipCodeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('zip_code');
+        Schema::dropIfExists('zipcodes');
     }
 }
