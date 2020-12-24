@@ -9,4 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Zipcode extends Model
 {
     use HasFactory;
+    protected $table = 'zipcodes';
+
+    protected $connection = 'mysql';
 }

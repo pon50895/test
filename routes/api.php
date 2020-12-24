@@ -20,7 +20,6 @@ use App\Http\Controllers\AddressController;
 //});
 
 Route::prefix('address')->group(function() {
-    Route::get('/{request}', [AddressController::class, 'GetAddress']);
-    Route::get('/multi/{request}', [AddressController::class, 'GetMultiAddress']);
+    Route::post('/', [AddressController::class, 'GetAddress']);
 });
 

@@ -62,7 +62,7 @@ class ZipcodeTableSeeder extends Seeder
                         'spelling'  => $street['abc'],
                     );
 
-                    DB::table('zip_code')->insert($input);
+                    DB::table('zipcodes')->insert($input);
                 }
             }
         }
